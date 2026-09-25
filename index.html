@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0d10">
+<meta name="description" content="Temple Fitness Point Gym — training, strength, cardio and personal fitness in Moradabad.">
+<title>Temple Fitness Point Gym | Moradabad</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#07090c;
+  --panel:#10141a;
+  --panel2:#151a21;
+  --text:#f5f7fa;
+  --muted:#a7adb7;
+  --accent:#c8ff28;
+  --accent2:#8ed600;
+  --line:rgba(255,255,255,.09);
+  --max:1180px;
+  --radius:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 80% 0%,rgba(200,255,40,.12),transparent 28rem),
+    var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
+.container{width:min(var(--max),92%);margin:auto}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(7,9,12,.78);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.4px}
+.brand-mark{
+  width:40px;height:40px;border-radius:12px;background:var(--accent);
+  color:#080a0c;display:grid;place-items:center;font-family:Oswald,sans-serif;font-size:19px;
+  transform:skew(-8deg);
+}
+.brand span:last-child{font-size:15px}
+.nav-links{display:flex;gap:28px;color:#d5d8dd;font-size:14px;font-weight:600}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{padding:11px 16px;border-radius:999px;background:var(--accent);color:#080a0c;font-weight:800;font-size:13px}
+.hero{min-height:820px;padding-top:76px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,rgba(7,9,12,.98) 0%,rgba(7,9,12,.82) 42%,rgba(7,9,12,.25) 100%),
+    url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1800&q=85') center/cover;
+  z-index:-2;
+}
+.hero:after{
+  content:"";position:absolute;inset:auto 0 0;height:180px;
+  background:linear-gradient(transparent,var(--bg));z-index:-1;
+}
+.hero-content{max-width:700px;padding:80px 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px}
+.dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 18px var(--accent)}
+h1{font-family:Oswald,sans-serif;font-size:clamp(58px,9vw,108px);line-height:.92;text-transform:uppercase;letter-spacing:-2px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:#d0d4da;font-size:18px;max-width:590px;margin:25px 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border-radius:13px;font-weight:800;font-size:14px;border:1px solid var(--line);transition:.2s}
+.btn-primary{background:var(--accent);color:#080a0c;border-color:var(--accent)}
+.btn-primary:hover{background:#dcff67;transform:translateY(-2px)}
+.btn-dark{background:rgba(255,255,255,.06);backdrop-filter:blur(8px)}
+.btn-dark:hover{border-color:rgba(200,255,40,.4);transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:42px;border:1px solid var(--line);border-radius:18px;overflow:hidden;max-width:650px}
+.stat{background:rgba(7,9,12,.72);padding:18px 20px}
+.stat strong{display:block;font-family:Oswald,sans-serif;font-size:28px;color:var(--accent)}
+.stat span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:40px}
+.kicker{color:var(--accent);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}
+h2{font-family:Oswald,sans-serif;font-size:clamp(40px,6vw,66px);line-height:.98;text-transform:uppercase;margin-top:8px}
+.section-head p{max-width:460px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:linear-gradient(145deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;min-height:250px;
+  transition:.25s;position:relative;overflow:hidden
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(200,255,40,.28)}
+.card-num{font-family:Oswald,sans-serif;color:var(--accent);font-size:14px}
+.card h3{font-family:Oswald,sans-serif;font-size:30px;text-transform:uppercase;margin:30px 0 10px}
+.card p{color:var(--muted);font-size:14px}
+.icon{
+  position:absolute;right:24px;top:24px;width:48px;height:48px;border:1px solid var(--line);
+  border-radius:15px;display:grid;place-items:center;color:var(--accent);font-size:22px
+}
+.gallery{display:grid;grid-template-columns:1.25fr .75fr .75fr;grid-template-rows:240px 240px;gap:14px}
+.gallery img{height:100%;object-fit:cover;border-radius:20px;filter:saturate(.9);border:1px solid var(--line)}
+.g1{grid-row:1/3}.g2{grid-column:2}.g3{grid-column:3}.g4{grid-column:2/4}
+.programs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.program{
+  padding:30px;border:1px solid var(--line);border-radius:22px;background:var(--panel);
+  display:flex;gap:20px;align-items:flex-start
+}
+.program .badge{min-width:46px;height:46px;border-radius:14px;background:rgba(200,255,40,.1);color:var(--accent);display:grid;place-items:center;font-weight:900}
+.program h3{font-size:18px;margin-bottom:6px}
+.program p{color:var(--muted);font-size:14px}
+.cta{
+  border:1px solid rgba(200,255,40,.25);border-radius:30px;padding:55px;
+  background:
+   linear-gradient(120deg,rgba(200,255,40,.13),transparent 55%),
+   var(--panel);
+  display:flex;justify-content:space-between;gap:35px;align-items:center
+}
+.cta h2{max-width:650px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.contact-card{border:1px solid var(--line);border-radius:22px;padding:28px;background:var(--panel)}
+.contact-card small{color:var(--accent);text-transform:uppercase;letter-spacing:1.5px;font-weight:800}
+.contact-card h3{font-size:20px;margin:8px 0}
+.contact-card p{color:var(--muted)}
+.map{
+  width:100%;height:330px;border:0;border-radius:22px;margin-top:18px;
+  background:#111 url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80') center/cover;
+  position:relative;overflow:hidden;border:1px solid var(--line)
+}
+.map-overlay{position:absolute;inset:0;background:rgba(7,9,12,.58);display:grid;place-items:center;text-align:center;padding:20px}
+footer{border-top:1px solid var(--line);padding:35px 0;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+.notice{font-size:11px;color:#777;margin-top:12px}
+.mobile-menu{display:none}
+@media(max-width:850px){
+  .nav-links{display:none}.mobile-menu{display:block;color:var(--accent);font-weight:900}
+  .hero{min-height:720px}.hero-bg{background-position:65% center}
+  .cards,.programs,.contact-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px 160px}
+  .g1{grid-row:1/2;grid-column:1/3}.g2{grid-column:1}.g3{grid-column:2}.g4{grid-column:1/3}
+  .section-head{display:block}.section-head p{margin-top:18px}
+  .cta{display:block;padding:35px}.cta .btn{margin-top:25px}
+}
+@media(max-width:520px){
+  .nav-inner{height:68px}.hero{padding-top:68px}.hero-content{padding:65px 0}
+  h1{font-size:58px}.hero p{font-size:15px}.stats{grid-template-columns:1fr}
+  section{padding:78px 0}.gallery{grid-template-rows:200px 145px 145px}
+  .footer-inner{display:block}.footer-inner p{margin-top:10px}
+}
+</style>
+</head>
+
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Temple Fitness Point Gym home">
+      <span class="brand-mark">TF</span><span>TEMPLE FITNESS POINT</span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="tel:+918630768458">CALL NOW</a>
+    <span class="mobile-menu">FITNESS</span>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="eyebrow"><span class="dot"></span> Moradabad • Fitness & Training</div>
+      <h1>BUILD<br><em>YOUR</em><br>POWER.</h1>
+      <p>
+        A focused fitness space for people who want to train consistently,
+        get stronger and make every workout count.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/918630768458?text=Hello%20Temple%20Fitness%20Point%20Gym%2C%20I%20would%20like%20to%20know%20about%20membership." target="_blank">JOIN / ENQUIRE ↗</a>
+        <a class="btn btn-dark" href="https://maps.app.goo.gl/5JUQZzfFmPUoihM69?g_st=aw" target="_blank">GET DIRECTIONS →</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong>4.8★</strong><span>Listed rating</span></div>
+        <div class="stat"><strong>05–22</strong><span>Listed daily hours</span></div>
+        <div class="stat"><strong>2011+</strong><span>Listed since</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Why Temple</div>
+        <h2>Train with<br>purpose.</h2>
+      </div>
+      <p>
+        Temple Fitness Point Gym is listed in Moradabad as a fitness centre
+        offering gym and training facilities. Use this website as a clean,
+        modern digital front door for new members.
+      </p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <span class="card-num">01</span><span class="icon">↗</span>
+        <h3>Strength</h3>
+        <p>Build a consistent training routine around strength, conditioning and progressive workouts.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">02</span><span class="icon">⚡</span>
+        <h3>Conditioning</h3>
+        <p>Combine cardio and functional movement to keep your sessions active and challenging.</p>
+      </article>
+      <article class="card">
+        <span class="card-num">03</span><span class="icon">◎</span>
+        <h3>Guidance</h3>
+        <p>Ask the gym team about personal training, workout guidance and the program that fits your goals.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="programs">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Training</div>
+        <h2>Choose your<br>focus.</h2>
+      </div>
+      <p>Programs can be adjusted by the gym team to suit the member's experience and goals.</p>
+    </div>
+    <div class="programs">
+      <div class="program"><div class="badge">01</div><div><h3>Strength Training</h3><p>Structured gym workouts focused on building strength and training consistency.</p></div></div>
+      <div class="program"><div class="badge">02</div><div><h3>Cardio & Conditioning</h3><p>Improve stamina and fitness with active conditioning sessions.</p></div></div>
+      <div class="program"><div class="badge">03</div><div><h3>Weight Management</h3><p>Discuss your fitness goals with the trainer and create a realistic routine.</p></div></div>
+      <div class="program"><div class="badge">04</div><div><h3>Personal Training</h3><p>Ask about one-to-one coaching, trainer availability and current plans.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">The atmosphere</div>
+        <h2>SHOW UP.<br>WORK HARD.</h2>
+      </div>
+      <p>These are professional fitness visuals used for the demo design. Replace them with the gym's own photos before launch.</p>
+    </div>
+    <div class="gallery">
+      <img class="g1" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1100&q=85" alt="Gym strength training area">
+      <img class="g2" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=85" alt="Modern gym equipment">
+      <img class="g3" src="https://images.unsplash.com/photo-1584467735871-7d4f7e6c7a9f?auto=format&fit=crop&w=800&q=85" alt="Fitness training">
+      <img class="g4" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1100&q=85" alt="Workout session">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">Visit Temple</div>
+        <h2>Ready to<br>start?</h2>
+      </div>
+      <p>Call or WhatsApp the gym for the latest membership plans, availability and timings.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <small>Location</small>
+        <h3>Temple Fitness Point Gym — Pramod Pal</h3>
+        <p>Daswaghat Road, Kisrol, Moradabad, Uttar Pradesh 244001</p>
+        <br>
+        <a class="btn btn-dark" href="https://maps.app.goo.gl/5JUQZzfFmPUoihM69?g_st=aw" target="_blank">OPEN GOOGLE MAPS ↗</a>
+      </div>
+      <div class="contact-card">
+        <small>Call / WhatsApp</small>
+        <h3>+91 86307 68458</h3>
+        <p>Ask about membership, training, current offers and gym timings.</p>
+        <br>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+918630768458">CALL</a>
+          <a class="btn btn-dark" href="https://wa.me/918630768458?text=Hello%20Temple%20Fitness%20Point%20Gym%2C%20I%20want%20to%20know%20about%20membership." target="_blank">WHATSAPP</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="map">
+      <div class="map-overlay">
+        <div>
+          <div class="kicker">Moradabad, Uttar Pradesh</div>
+          <h3 style="font-family:Oswald;font-size:34px;text-transform:uppercase;margin:8px 0 15px">Find your training ground.</h3>
+          <a class="btn btn-primary" href="https://maps.app.goo.gl/5JUQZzfFmPUoihM69?g_st=aw" target="_blank">GET DIRECTIONS →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <div>
+        <div class="kicker">Your next workout</div>
+        <h2>DON'T WAIT FOR<br>MONDAY.</h2>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/918630768458?text=Hello%20Temple%20Fitness%20Point%20Gym%2C%20I%20want%20to%20visit%20and%20know%20about%20membership." target="_blank">ENQUIRE NOW ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Temple Fitness Point Gym. All rights reserved.</p>
+    <p>Moradabad • Fitness • Strength • Training</p>
+  </div>
+  <div class="container notice">Demo website concept. Confirm the gym's official phone, hours, services, pricing and photos with the owner before publishing.</div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
